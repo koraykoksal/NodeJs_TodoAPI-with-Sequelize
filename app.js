@@ -16,6 +16,9 @@ const PORT = process.env.PORT || 8000;
 app.use(express.json())
 
 
+// Router
+app.use(require('./app/routers/todo'))
+
 // Catch Eror
 app.use(require('./app/errorHandler'))
 

@@ -51,7 +51,7 @@ const Todo = sequelize.define('todo',{
 //? field isimlerinde değişiklik olursa sync işlemini alter:true ile kullanılabilir bu işlemde field içindeki veriler sabit kalır.
 //? veritabanında yapılacak değişiklikler de bu komut kullanılabilir
 //? bu komut kullanımında backup alınır ve değişiklik yapıldıktan sonra backup tekrar geri yüklenir. burada performans önemlidir.
-//sequelize.sync({alter:true})
+sequelize.sync({alter:true})
 
 
 //? database bağlantısı yapılır

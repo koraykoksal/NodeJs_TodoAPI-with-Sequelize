@@ -19,6 +19,10 @@ app.use(express.json())
 // Router
 app.use(require('./app/routers/todo'))
 
+// DatabaseConnection:
+const { dbConnection } = require('./app/dbConnection')
+dbConnection() // sequelize.sync() must run after model defines.
+
 // Catch Eror
 app.use(require('./app/errorHandler'))
 

@@ -39,25 +39,12 @@ const Todo = sequelize.define('todo',{
         allowNull:false,
         defaultValue:false,
     }
+
+    //? Not need define "createdAt" & "updatedAt" fields.
+    // createdAt: false, // Unset
+    // updatedAt: false, // Unset
 })
 
-//? sync komutu tek başına sadece create işlemi yapar
-//? öneriler komut kullanımı budur.
-// sequelize.sync()
-
-//? field isimlerinde değişiklik olursa sync işlemini force:true ile kullanılabilir ama bu işlemde field içindeki veriler silinir.
-//sequelize.sync({force:true})
-
-//? field isimlerinde değişiklik olursa sync işlemini alter:true ile kullanılabilir bu işlemde field içindeki veriler sabit kalır.
-//? veritabanında yapılacak değişiklikler de bu komut kullanılabilir
-//? bu komut kullanımında backup alınır ve değişiklik yapıldıktan sonra backup tekrar geri yüklenir. burada performans önemlidir.
-//sequelize.sync({alter:true})
-
-
-//? database bağlantısı yapılır
-sequelize.authenticate()
-.then(()=>console.log('** DB Connected **'))
-.catch(()=>console.log('* DB Not Connected *'))
 
 
 
